@@ -1,0 +1,23 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>HVAC Design</title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.water') }}">Water</a></li>
+                <li>Air</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        {% block content %}{% endblock %}
+    </body>
+</html>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    

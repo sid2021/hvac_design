@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<h1>Pipe sizing</h1>
+
+<form method="POST">
+{{ form.hidden_tag() }}
+{{ form.load.label }} <br> {{ form.load() }} <br>
+{{ form.diameter.label }} <br> {{ form.diameter() }} <br>
+{{ form.temperature.label }} <br> {{ form.temperature() }} <br> 
+{{ form.temp_difference.label }} <br> {{ form.temp_difference }} <br>
+{{ form.submit() }}
+</form>
+
+{% endblock %}
