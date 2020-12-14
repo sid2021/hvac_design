@@ -3,10 +3,16 @@
 {% block content %}
 <h1>Pipe sizing</h1>
 
+{% if pressure_losses %}
+{% for loss in pressure_losses %}
+<p>DN{{ loss[0] }}: {{ loss[1] }} Pa/m.</p>
+{% endfor %}
+{% endif %}
+
 <form method="POST">
 {{ form.hidden_tag() }}
 {{ form.load.label }} <br> {{ form.load() }} <br>
-{{ form.diameter.label }} <br> {{ form.diameter() }} <br>
+{{ form.pipe_type.label }} <br> {{ form.pipe_type() }} <br>
 {{ form.temperature.label }} <br> {{ form.temperature() }} <br> 
 {{ form.temp_difference.label }} <br> {{ form.temp_difference }} <br>
 {{ form.submit() }}
